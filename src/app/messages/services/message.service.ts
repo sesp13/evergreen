@@ -19,7 +19,16 @@ export class MessageService {
     return this.http.get<Message[]>(`${this.messagesUrl}`);
   }
 
-  saveMessage(message: Message): Observable<any> {
-    return this.http.post(`${this.messagesUrl}`, message);
+  getMessageById(id: string) {
+    return this.http.get(`${this.messagesUrl}/${id}`);
   }
+
+  saveMessage(message: Message): Observable<Message> {
+    return this.http.post<Message>(`${this.messagesUrl}`, message);
+  }
+
+  updateMessage(message: Message): Observable<Message> {
+    return this.http.put<Message>(`${this.messagesUrl}/${message?.id}`, message);
+  }
+
 }
