@@ -18,4 +18,8 @@ export class MessageService {
   getMessages(): Observable<Message[]> {
     return this.http.get<Message[]>(`${this.messagesUrl}`);
   }
+
+  saveMessage(message: Message): Observable<any> {
+    return this.http.post(`${this.messagesUrl}`, message);
+  }
 }
