@@ -39,7 +39,12 @@
               >
                 Editar
               </button>
-              <button class="btn btn-danger" (click)="deleteMessage(message?.id)">Eliminar</button>
+              <button
+                class="btn btn-danger"
+                (click)="confirmDeletion(message?.id)"
+              >
+                Eliminar
+              </button>
             </div>
           </td>
         </tr>
@@ -47,3 +52,9 @@
     </table>
   </div>
 </div>
+
+<!-- deletion modal -->
+<app-confirmation-modal
+  #deletionModal
+  (onConfirmation)="deleteMessage()"
+></app-confirmation-modal>

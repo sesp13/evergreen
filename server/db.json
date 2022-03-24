@@ -1,0 +1,97 @@
+{
+  "users": [
+    {
+      "name": "User 1",
+      "cc": "123",
+      "email": "test@email.com"
+    },
+    {
+      "name": "User 2",
+      "cc": "1234",
+      "email": "test1@email.com"
+    },
+    {
+      "name": "User 3",
+      "cc": "12345",
+      "email": "test3@email.com"
+    },
+    {
+      "name": "User 4",
+      "cc": "12346",
+      "email": "test4@email.com"
+    }
+  ],
+  "messages": [
+    {
+      "content": "Mi segundo mensaje chavales!",
+      "subject": "Trying to send my second message",
+      "from": [
+        {
+          "name": "User 1",
+          "cc": "123",
+          "email": "test@email.com"
+        }
+      ],
+      "to": [
+        {
+          "name": "User 2",
+          "cc": "1234",
+          "email": "test1@email.com"
+        }
+      ],
+      "id": "2"
+    },
+    {
+      "content": "Mensaje editado",
+      "subject": "Asunto de un mensaje editado",
+      "from": [
+        {
+          "name": "User 1",
+          "cc": "123",
+          "email": "test@email.com"
+        }
+      ],
+      "to": [
+        {
+          "name": "User 2",
+          "cc": "1234",
+          "email": "test1@email.com"
+        }
+      ],
+      "id": "3"
+    },
+    {
+      "id": "4",
+      "content": "Message 4",
+      "subject": "Trying to send my third message",
+      "from": [
+        {
+          "name": "User 1",
+          "cc": "123",
+          "email": "test@email.com"
+        }
+      ],
+      "to": [
+        {
+          "name": "User 2",
+          "cc": "1234",
+          "email": "test1@email.com"
+        }
+      ]
+    },
+    {
+      "content": "Mensajes chidos",
+      "subject": "Otro tipo de mensaje chido",
+      "from": null,
+      "to": null,
+      "id": "sWPtKxG"
+    },
+    {
+      "content": "sss",
+      "subject": "Mensaje editado",
+      "from": null,
+      "to": null,
+      "id": "BTo41RC"
+    }
+  ]
+}

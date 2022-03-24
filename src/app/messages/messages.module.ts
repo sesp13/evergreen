@@ -6,9 +6,10 @@ import { MessagesRoutingModule } from './messages-routing.module';
 
 import { ListComponent } from './pages/list/list.component';
 import { AddComponent } from './pages/add/add.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [ListComponent, AddComponent],
-  imports: [CommonModule, ReactiveFormsModule, MessagesRoutingModule],
+  imports: [CommonModule, ReactiveFormsModule, MessagesRoutingModule, SharedModule],
 })
 export class MessagesModule {}

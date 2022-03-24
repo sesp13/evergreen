@@ -35,6 +35,6 @@ export class MessageService {
   }
 
   deleteMessage(id: string): Observable<any> {
-    return this.http.delete<Message>(`${this.messagesUrl}/${id}`);
+    return this.http.delete(`${this.messagesUrl}/${id}`);
   }
 }
