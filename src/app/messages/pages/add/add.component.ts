@@ -70,7 +70,7 @@ export class AddComponent implements OnInit {
       // Edit
       this.messageService
         .updateMessage(this.form.value as Message)
-        .subscribe((result) => {
+        .subscribe((result: Message) => {
           this.toastr.success(this.successMessage);
         });
     } else {

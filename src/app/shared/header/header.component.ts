@@ -12,6 +12,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   goHome(): void {
-    this.router.navigate(['/messages']);
+    this.router.navigate(['/home']);
   }
 }
