@@ -28,7 +28,13 @@ export class MessageService {
   }
 
   updateMessage(message: Message): Observable<Message> {
-    return this.http.put<Message>(`${this.messagesUrl}/${message?.id}`, message);
+    return this.http.put<Message>(
+      `${this.messagesUrl}/${message?.id}`,
+      message
+    );
   }
 
+  deleteMessage(id: string): Observable<any> {
+    return this.http.delete<Message>(`${this.messagesUrl}/${id}`);
+  }
 }

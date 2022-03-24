@@ -2,7 +2,10 @@
 <div class="row mt-3">
   <div class="col">
     <div class="d-flex justify-content-end">
-      <button class="btn btn-success float-end" [routerLink]="['/messages/add']">
+      <button
+        class="btn btn-success float-end"
+        [routerLink]="['/messages/add']"
+      >
         Crear Mensaje
       </button>
     </div>
@@ -29,12 +32,15 @@
           </td>
           <td>{{ getUsers(message?.to) }}</td>
           <td>
-            <button
-              class="btn btn-primary"
-              [routerLink]="['/messages/edit', message?.id]"
-            >
-              Editar
-            </button>
+            <div class="d-flex">
+              <button
+                class="btn btn-primary mr-2"
+                [routerLink]="['/messages/edit', message?.id]"
+              >
+                Editar
+              </button>
+              <button class="btn btn-danger" (click)="deleteMessage(message?.id)">Eliminar</button>
+            </div>
           </td>
         </tr>
       </tbody>
