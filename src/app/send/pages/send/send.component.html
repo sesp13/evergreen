@@ -1,6 +1,13 @@
+<div class="row">
+  <div class="col">
+    <div class="float-right">
+      <a [routerLink]="['/send/list']">Volver al listado de mensajes</a>
+    </div>
+  </div>
+</div>
 <h1>Crear Mensaje</h1>
 <hr />
-<form [formGroup]="form">
+<form [formGroup]="form" class="pb-5">
   <div class="row">
     <div class="form-group col">
       <label class="form-label">Selección de plantilla</label>
@@ -51,7 +58,7 @@
       <label class="form-label">Emisor</label>
       <select class="form-control" formControlName="sender">
         <option value="">-- Escoge un emisor ---</option>
-        <option *ngFor="let user of sendersLst; let i = index" [value]="i">
+        <option *ngFor="let user of sendersLst" [value]="user.id">
           {{ user?.id }} - {{ user?.name }}
         </option>
       </select>

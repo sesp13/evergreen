@@ -17,4 +17,8 @@ export class SendService {
   getMessages(): Observable<Message[]> {
     return this.http.get<Message[]>(this.messagesUrl);
   }
+
+  createMessage(newMsg: Message): Observable<Message> {
+    return this.http.post<Message>(this.messagesUrl, newMsg);
+  }
 }

@@ -31,7 +31,7 @@ export class ListComponent implements OnInit {
   setUsers(): void {
     this.messagesLst.forEach((message: Message) => {
       // Sender
-      this.userService.getUserById(message?.id).subscribe((user: User) => {
+      this.userService.getUserById(message?.sender).subscribe((user: User) => {
         message.senderObject = user;
       });
       // Receivers

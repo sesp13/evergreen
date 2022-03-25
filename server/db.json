@@ -99,40 +99,47 @@
   ],
   "messages": [
     {
-      "id": "1",
-      "content": "Viva wordpress",
-      "subject": "Esta es una plantilla",
-      "name": "Plantilla nueva sin pendejiar",
+      "subject": "Hola Mundo",
+      "content": "Hola mundo desde evergreen",
+      "sender": "3",
+      "receivers": [
+        "2"
+      ],
       "status": "draft",
-      "sender": "1",
-      "receivers": [
-        "3",
-        "4"
-      ]
+      "id": 1
     },
     {
-      "id": "2",
-      "content": "Viva wordpress",
-      "subject": "Esta es una plantilla",
-      "name": "Plantilla nueva sin pendejiar",
-      "status": "sent",
+      "subject": "Que pasa bros",
+      "content": "hOLA",
       "sender": "1",
       "receivers": [
-        "3",
-        "4"
-      ]
+        "2"
+      ],
+      "status": "sent",
+      "id": 2
     },
     {
-      "id": "2",
-      "content": "Viva wordpress",
-      "subject": "Esta es una plantilla",
-      "name": "Plantilla nueva sin pendejiar",
-      "status": "sent",
+      "subject": "Buenos días",
+      "content": "Dormilon, quiere una tasa de te",
       "sender": "1",
       "receivers": [
+        "2"
+      ],
+      "status": "draft",
+      "id": 3
+    },
+    {
+      "subject": "Hola",
+      "content": "Mundo",
+      "sender": "1",
+      "receivers": [
+        "1",
         "3",
+        "2",
         "4"
-      ]
+      ],
+      "status": "sent",
+      "id": 4
     }
   ]
 }

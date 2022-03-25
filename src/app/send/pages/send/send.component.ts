@@ -12,6 +12,7 @@ import { User } from 'src/app/global/interfaces/user.interface';
 import { TemplateService } from 'src/app/global/services/template.service';
 import { SendService } from 'src/app/global/services/send.service';
 import { UserService } from 'src/app/global/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-send',
@@ -48,7 +49,8 @@ export class SendComponent implements OnInit {
     private templateService: TemplateService,
     private usersService: UserService,
     private toastr: ToastrService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -125,6 +127,10 @@ export class SendComponent implements OnInit {
     message.sender = value.sender;
     message.receivers = value.receivers;
     message.status = value.status;
-    console.log(message);
+    // Create message
+    this.sendService.createMessage(message).subscribe((result: Message) => {
+      this.toastr.success('Mensaje creado correctamente');
+      this.router.navigate(['/send/list']);
+    });
   }
 }
