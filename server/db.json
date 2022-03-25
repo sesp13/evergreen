@@ -89,6 +89,12 @@
       "subject": "Esta es una plantilla",
       "name": "Plantilla nueva sin pendejiar",
       "id": "G0ueZuv"
+    },
+    {
+      "content": "ssss",
+      "subject": "sss",
+      "name": "hello",
+      "id": "A6ffQnC"
     }
   ],
   "messages": [
@@ -99,7 +105,10 @@
       "name": "Plantilla nueva sin pendejiar",
       "status": "draft",
       "sender": "1",
-      "receivers": ["3", "4"]
+      "receivers": [
+        "3",
+        "4"
+      ]
     },
     {
       "id": "2",
@@ -108,7 +117,10 @@
       "name": "Plantilla nueva sin pendejiar",
       "status": "sent",
       "sender": "1",
-      "receivers": ["3", "4"]
+      "receivers": [
+        "3",
+        "4"
+      ]
     },
     {
       "id": "2",
@@ -117,7 +129,10 @@
       "name": "Plantilla nueva sin pendejiar",
       "status": "sent",
       "sender": "1",
-      "receivers": ["3", "4"]
+      "receivers": [
+        "3",
+        "4"
+      ]
     }
   ]
 }

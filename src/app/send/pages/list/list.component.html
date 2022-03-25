@@ -26,14 +26,21 @@
         <tr *ngFor="let message of messagesLst">
           <th scope="row">{{ message?.subject }}</th>
           <th>{{ message?.content }}</th>
-          <td>{{ message?.sender }}</td>
+          <td>{{ message?.senderObject?.name }}</td>
           <td>
-            xd
+            <p *ngFor="let user of message?.receiversObjects">
+              {{ user.name }}
+            </p>
           </td>
           <td>{{ message?.status }}</td>
           <td>
             <div class="d-flex">
-              <button class="btn btn-primary mr-2">Enviar</button>
+              <button
+                class="btn btn-primary mr-2"
+                *ngIf="message.status == 'draft'"
+              >
+                Enviar
+              </button>
               <button class="btn btn-danger">Eliminar</button>
             </div>
           </td>
