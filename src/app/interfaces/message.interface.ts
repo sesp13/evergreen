@@ -1,4 +1,4 @@
-import { User } from '../../users/interfaces/user.interface';
+import { User } from './user.interface';
 
 export interface Message {
   id?: string;
