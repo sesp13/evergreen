@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ConfirmationModalComponent } from 'src/app/shared/components/confirmation-modal/confirmation-modal.component';
-import { Message } from '../../../global/interfaces/message.interface';
+import { MessageTemplate } from '../../../global/interfaces/message.interface';
 import { User } from 'src/app/global/interfaces/user.interface';
 
 import { MessageService } from '../../../global/services/message.service';
@@ -12,7 +12,7 @@ import { MessageService } from '../../../global/services/message.service';
 })
 export class ListComponent implements OnInit {
   @ViewChild('deletionModal') deletionModal: ConfirmationModalComponent;
-  messagesLst: Message[] = [];
+  messagesLst: MessageTemplate[] = [];
   deleteId?: string;
 
   constructor(
@@ -25,17 +25,9 @@ export class ListComponent implements OnInit {
   }
 
   getMessages(): void {
-    this.messageService.getMessages().subscribe((lst: Message[]) => {
+    this.messageService.getMessages().subscribe((lst: MessageTemplate[]) => {
       this.messagesLst = lst;
     });
-  }
-
-  getUsers(userLst: User[]): string {
-    let result = '';
-    userLst?.forEach((user: User) => {
-      result += `${user.cc}/${user.name} `;
-    });
-    return result;
   }
 
   confirmDeletion(id: string): void {

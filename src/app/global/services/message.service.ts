@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 // Intefaces
-import { Message } from '../interfaces/message.interface';
+import { MessageTemplate } from '../interfaces/message.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -15,20 +15,20 @@ export class MessageService {
 
   constructor(private http: HttpClient) {}
 
-  getMessages(): Observable<Message[]> {
-    return this.http.get<Message[]>(`${this.messagesUrl}`);
+  getMessages(): Observable<MessageTemplate[]> {
+    return this.http.get<MessageTemplate[]>(`${this.messagesUrl}`);
   }
 
   getMessageById(id: string) {
     return this.http.get(`${this.messagesUrl}/${id}`);
   }
 
-  saveMessage(message: Message): Observable<Message> {
-    return this.http.post<Message>(`${this.messagesUrl}`, message);
+  saveMessage(message: MessageTemplate): Observable<MessageTemplate> {
+    return this.http.post<MessageTemplate>(`${this.messagesUrl}`, message);
   }
 
-  updateMessage(message: Message): Observable<Message> {
-    return this.http.put<Message>(
+  updateMessage(message: MessageTemplate): Observable<MessageTemplate> {
+    return this.http.put<MessageTemplate>(
       `${this.messagesUrl}/${message?.id}`,
       message
     );

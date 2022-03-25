@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Message } from '../../../global/interfaces/message.interface';
+import { MessageTemplate } from '../../../global/interfaces/message.interface';
 import { MessageService } from '../../../global/services/message.service';
 import { switchMap } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
@@ -37,7 +37,7 @@ export class AddComponent implements OnInit {
         .pipe(
           switchMap(({ id }) => this.messageService.getMessageById(id ?? ''))
         )
-        .subscribe((message: Message) => {
+        .subscribe((message: MessageTemplate) => {
           this.form.setValue({
             subject: message?.subject ?? '',
             content: message?.content ?? '',
@@ -65,15 +65,15 @@ export class AddComponent implements OnInit {
     if (this.form.get('id')?.value) {
       // Edit
       this.messageService
-        .updateMessage(this.form.value as Message)
-        .subscribe((result: Message) => {
+        .updateMessage(this.form.value as MessageTemplate)
+        .subscribe((result: MessageTemplate) => {
           this.toastr.success(this.successMessage);
         });
     } else {
       // Save
       this.messageService
-        .saveMessage(this.form.value as Message)
-        .subscribe((result: Message) => {
+        .saveMessage(this.form.value as MessageTemplate)
+        .subscribe((result: MessageTemplate) => {
           this.toastr.success(this.successMessage);
           this.router.navigate(['/messages/edit', result?.id]);
         });

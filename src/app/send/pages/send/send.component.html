@@ -1,15 +1,75 @@
 <h1>Enviar mensaje</h1>
-<hr>
+<hr />
 <form [formGroup]="form">
   <div class="row">
-    <!-- <div class="form-group col">
+    <div class="form-group col">
       <label class="form-label">Selección de plantilla</label>
-      <select class="form-control" (change)="setTemplate()" formControlName="template">
+      <select
+        class="form-control"
+        (change)="setTemplate()"
+        formControlName="template"
+      >
         <option value="">-- Seleccionar plantilla ---</option>
-        <option *ngFor="let message of templateLst" [value]="message.id">{{ message.id }}</option>
+        <option *ngFor="let message of templateLst; let i = index" [value]="i">
+          {{ message.id }} - {{ message.name }}
+        </option>
         <option value="custom">Personalizada</option>
       </select>
-    </div> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+      <label>Asunto</label>
+      <input type="text" class="form-control" formControlName="subject" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
+      <label>Contenido</label>
+      <textarea class="form-control" formControlName="content"></textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <label class="form-label">Emisor</label>
+      <select
+        class="form-control"
+        formControlName="sender"
+      >
+        <option value="">-- Escoge un emisor ---</option>
+        <option *ngFor="let user of sendersLst; let i = index" [value]="i">
+          {{ user?.id }} - {{ user?.name }}
+        </option>
+      </select>
+    </div>
+  
+  </div>
+  <div class="row">
+    <div class="form-group col">
+      <label class="form-label">Receptor</label>
+      <select
+        class="form-control"
+        formControlName="receivers"
+      >
+        <option value="">-- Escoge un receptor ---</option>
+        <option *ngFor="let user of receiversLst; let i = index" [value]="i">
+          {{ user?.id }} - {{ user?.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col">
+      <input
+        type="submit"
+        value="Enviar"
+        [disabled]="form.invalid"
+        class="btn btn-success float-right"
+        (click)="send()"
+      />
+    </div>
   </div>
 </form>
 

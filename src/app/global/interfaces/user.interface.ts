@@ -1,5 +1,10 @@
 export interface User {
-  name?: string;
-  cc?: string;
-  email?: string;
+  name: string;
+  gender: string;
+  email: string;
+  number: string;
+  birthDate: Date;
+  sender: boolean;
+  receiver: boolean;
+  id: string;
 }

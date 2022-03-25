@@ -1,24 +1,44 @@
 {
   "users": [
     {
-      "name": "User 1",
-      "cc": "123",
-      "email": "test@email.com"
+      "name": "Santiago Valencia",
+      "gender": "male",
+      "email": "svalencia@unal.edu.co",
+      "number": "1234567",
+      "birthDate": "1999-10-19",
+      "sender": true,
+      "receiver": true,
+      "id": "1"
     },
     {
-      "name": "User 2",
-      "cc": "1234",
-      "email": "test1@email.com"
+      "name": "Simon Cano",
+      "gender": "male",
+      "email": "saimon@correo.com",
+      "number": "1234567",
+      "birthDate": "2007-11-13",
+      "sender": true,
+      "receiver": true,
+      "id": "2"
     },
     {
-      "name": "User 3",
-      "cc": "12345",
-      "email": "test3@email.com"
+      "name": "Valentina Valencia",
+      "gender": "female",
+      "email": "valenvalencia@unal.edu.co",
+      "number": "1258926",
+      "birthDate": "1995-10-19",
+      "sender": true,
+      "receiver": true,
+      "id": "3"
     },
     {
-      "name": "User 4",
-      "cc": "12346",
-      "email": "test4@email.com"
+      "name": "John Mendez",
+      "gender": "male",
+      "email": "john@unal.edu.co",
+      "number": "789456",
+      "birthDate": "1965-02-03",
+      "sender": true,
+      "receiver": true,
+      "id": "4"
     }
   ],
   "messages": [
