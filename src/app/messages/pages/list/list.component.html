@@ -1,4 +1,4 @@
-<h1>Mensajes</h1>
+<h1>Plantillas de mensaje</h1>
 <div class="row mt-3">
   <div class="col">
     <div class="d-flex justify-content-end">
@@ -6,7 +6,7 @@
         class="btn btn-success float-end"
         [routerLink]="['/messages/add']"
       >
-        Crear Mensaje
+        Crear Plantilla
       </button>
     </div>
   </div>
@@ -18,8 +18,6 @@
         <tr>
           <th scope="col">Asunto</th>
           <th scope="col">Contenido</th>
-          <th scope="col">Remitente</th>
-          <th scope="col">Destinatario</th>
           <th scope="col">Acciones</th>
         </tr>
       </thead>
@@ -27,10 +25,6 @@
         <tr *ngFor="let message of messagesLst">
           <th scope="row">{{ message?.subject }}</th>
           <td>{{ message?.content }}</td>
-          <td>
-            {{ getUsers(message?.from) }}
-          </td>
-          <td>{{ getUsers(message?.to) }}</td>
           <td>
             <div class="d-flex">
               <button

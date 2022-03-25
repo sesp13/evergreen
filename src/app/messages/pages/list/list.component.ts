@@ -45,7 +45,7 @@ export class ListComponent implements OnInit {
 
   deleteMessage(): void {
     this.messageService.deleteMessage(this.deleteId).subscribe((result) => {
-      this.toastr.success('Mensaje eliminado correctamente');
+      this.toastr.success('Plantilla eliminada correctamente');
       this.getMessages();
     });
   }

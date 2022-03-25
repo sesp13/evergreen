@@ -55,13 +55,13 @@ export class AddComponent implements OnInit {
 
   setUpLabels(edit: boolean): void {
     if (edit) {
-      this.title = `Editar mensaje`;
+      this.title = `Editar plantilla`;
       this.submitTitle = 'Editar';
-      this.successMessage = 'Mensaje editado correctamente!';
+      this.successMessage = 'Plantilla editada correctamente!';
     } else {
-      this.title = 'Crear Mensaje';
+      this.title = 'Crear plantilla';
       this.submitTitle = 'Guardar';
-      this.successMessage = 'Mensaje creado correctamente!';
+      this.successMessage = 'Plantilla creada correctamente!';
     }
   }
 
