@@ -1,9 +1,6 @@
-import { User } from './user.interface';
-
 export interface Message {
-  id?: string;
-  content?: string;
+  name?: string;
   subject?: string;
-  from?: User[];
-  to?: User[];
+  content?: string;
+  id?: string;
 }

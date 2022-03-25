@@ -19,9 +19,7 @@ export class AddComponent implements OnInit {
   form: FormGroup = this.fb.group({
     content: ['', [Validators.required]],
     subject: ['', [Validators.required]],
-    from: [],
-    to: [],
-    id: [],
+    name: ['', [Validators.required]],
   });
 
   constructor(
@@ -43,9 +41,7 @@ export class AddComponent implements OnInit {
           this.form.setValue({
             subject: message?.subject ?? '',
             content: message?.content ?? '',
-            from: message?.from ?? [],
-            to: message?.to ?? [],
-            id: message?.id ?? '',
+            name: message?.name ?? '',
           });
         });
     } else {

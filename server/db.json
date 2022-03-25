@@ -80,13 +80,6 @@
       ]
     },
     {
-      "content": "Mensajes chidos",
-      "subject": "Otro tipo de mensaje chido",
-      "from": null,
-      "to": null,
-      "id": "sWPtKxG"
-    },
-    {
       "content": "sss",
       "subject": "Mensaje editado",
       "from": null,
@@ -94,11 +87,10 @@
       "id": "BTo41RC"
     },
     {
-      "content": "ihjiohjoi",
-      "subject": "Mensaje editado",
-      "from": null,
-      "to": null,
-      "id": "tiOjX_t"
+      "content": "Mundo",
+      "subject": "Hola",
+      "name": "Nueva plantilla",
+      "id": "dLbSVsc"
     }
   ]
 }

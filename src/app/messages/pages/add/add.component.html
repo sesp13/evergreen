@@ -10,6 +10,12 @@
 <form [formGroup]="form" (ngSubmit)="send()">
   <div class="row">
     <div class="form-group col">
+      <label for="subject">Nombre</label>
+      <input type="text" id="name" class="form-control" formControlName="name" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col">
       <label for="subject">Asunto</label>
       <input type="text" id="subject" class="form-control" formControlName="subject" />
     </div>
