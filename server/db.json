@@ -90,5 +90,34 @@
       "name": "Plantilla nueva sin pendejiar",
       "id": "G0ueZuv"
     }
+  ],
+  "messages": [
+    {
+      "id": "1",
+      "content": "Viva wordpress",
+      "subject": "Esta es una plantilla",
+      "name": "Plantilla nueva sin pendejiar",
+      "status": "draft",
+      "sender": "1",
+      "receivers": ["3", "4"]
+    },
+    {
+      "id": "2",
+      "content": "Viva wordpress",
+      "subject": "Esta es una plantilla",
+      "name": "Plantilla nueva sin pendejiar",
+      "status": "sent",
+      "sender": "1",
+      "receivers": ["3", "4"]
+    },
+    {
+      "id": "2",
+      "content": "Viva wordpress",
+      "subject": "Esta es una plantilla",
+      "name": "Plantilla nueva sin pendejiar",
+      "status": "sent",
+      "sender": "1",
+      "receivers": ["3", "4"]
+    }
   ]
 }

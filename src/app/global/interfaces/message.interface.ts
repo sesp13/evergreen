@@ -4,4 +4,5 @@ export interface Message {
   sender?: string;
   receivers?: string[];
   status?: string;
+  id?: string;
 }

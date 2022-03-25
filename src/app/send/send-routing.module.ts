@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListComponent } from './pages/list/list.component';
 import { SendComponent } from './pages/send/send.component';
 
 const routes: Routes = [
@@ -7,12 +8,16 @@ const routes: Routes = [
     path: '',
     children: [
       {
-        path: '',
+        path: 'list',
+        component: ListComponent,
+      },
+      {
+        path: 'add',
         component: SendComponent,
       },
       {
-        path: '',
-        redirectTo: '/',
+        path: '**',
+        redirectTo: 'list',
       },
     ],
   },
