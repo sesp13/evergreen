@@ -16,6 +16,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'users',
+    loadChildren: () =>
+      import('./users/users.module').then(
+        (module) => module.UsersModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },
