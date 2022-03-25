@@ -30,6 +30,7 @@ export class SendComponent implements OnInit {
     customize: [false],
     sender: ['', [Validators.required]],
     receivers: ['', [Validators.required]],
+    status: ['', [Validators.required]],
   });
   subjectControl?: AbstractControl = this.form.get('subject');
   contentControl?: AbstractControl = this.form.get('content');
@@ -123,5 +124,7 @@ export class SendComponent implements OnInit {
     message.content = this.contentControl.value;
     message.sender = value.sender;
     message.receivers = value.receivers;
+    message.status = value.status;
+    console.log(message);
   }
 }
