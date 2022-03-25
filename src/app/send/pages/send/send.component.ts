@@ -22,17 +22,25 @@ export class SendComponent implements OnInit {
   templateLst: MessageTemplate[] = [];
   sendersLst: User[] = [];
   receiversLst: User[] = [];
-  selectedTemplate?: MessageTemplate;
 
   form: FormGroup = this.fb.group({
-    template: ['', [Validators.required]],
+    template: [''],
     subject: [{ value: '', disabled: true }, [Validators.required]],
     content: [{ value: '', disabled: true }, [Validators.required]],
+    customize: [false],
     sender: ['', [Validators.required]],
     receivers: ['', [Validators.required]],
   });
   subjectControl?: AbstractControl = this.form.get('subject');
   contentControl?: AbstractControl = this.form.get('content');
+
+  get formValid(): boolean {
+    return (
+      this.form.valid &&
+      this.subjectControl.value != '' &&
+      this.contentControl.value != ''
+    );
+  }
 
   constructor(
     private sendService: SendService,
@@ -73,20 +81,27 @@ export class SendComponent implements OnInit {
     this.resetTemplateFields();
     if (value == '') {
       return;
-    } else if (value == 'custom') {
-      this.disableTemplateFields(false);
     } else {
       // Set content
-      this.selectedTemplate = this.templateLst[value];
-      this.subjectControl.setValue(this.selectedTemplate.subject);
-      this.contentControl.setValue(this.selectedTemplate.content);
+      const selectedTemplate = this.templateLst[value];
+      this.subjectControl.setValue(selectedTemplate.subject);
+      this.contentControl.setValue(selectedTemplate.content);
+    }
+  }
+
+  customizeTemplateFields(): void {
+    const custom: boolean = this.form.get('customize')?.value;
+    if (custom) {
+      this.disableTemplateFields(false);
+    } else {
+      this.form.get('template').setValue('');
+      this.resetTemplateFields();
     }
   }
 
   resetTemplateFields(): void {
     this.subjectControl.setValue('');
     this.contentControl.setValue('');
-    this.selectedTemplate = undefined;
     this.disableTemplateFields(true);
   }
 

@@ -13,7 +13,6 @@
         <option *ngFor="let message of templateLst; let i = index" [value]="i">
           {{ message.name ?? "Sin nombre" }}
         </option>
-        <option value="custom">Personalizada</option>
       </select>
     </div>
   </div>
@@ -27,6 +26,23 @@
     <div class="form-group col">
       <label>Contenido</label>
       <textarea class="form-control" formControlName="content"></textarea>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="form-check float-right">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="flexCheckChecked"
+          formControlName="customize"
+          (change)="customizeTemplateFields()"
+        />
+        <label class="form-check-label" for="flexCheckChecked">
+          Personalizar plantilla
+        </label>
+      </div>
     </div>
   </div>
 
@@ -59,7 +75,7 @@
       <input
         type="submit"
         value="Enviar"
-        [disabled]="form.invalid"
+        [disabled]="!formValid"
         class="btn btn-success float-right"
         (click)="send()"
       />
