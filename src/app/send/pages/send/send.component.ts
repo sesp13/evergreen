@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  AbstractControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { MessageTemplate } from 'src/app/global/interfaces/message.interface';
+import { Message } from 'src/app/global/interfaces/message.interface';
+import { MessageTemplate } from 'src/app/global/interfaces/messageTemplate.interface';
 import { User } from 'src/app/global/interfaces/user.interface';
 import { MessageService } from 'src/app/global/services/message.service';
 import { SendService } from 'src/app/global/services/send.service';
@@ -25,6 +31,8 @@ export class SendComponent implements OnInit {
     sender: ['', [Validators.required]],
     receivers: ['', [Validators.required]],
   });
+  subjectControl?: AbstractControl = this.form.get('subject');
+  contentControl?: AbstractControl = this.form.get('content');
 
   constructor(
     private sendService: SendService,
@@ -70,29 +78,35 @@ export class SendComponent implements OnInit {
     } else {
       // Set content
       this.selectedTemplate = this.templateLst[value];
-      this.form.get('subject').setValue(this.selectedTemplate.subject);
-      this.form.get('content').setValue(this.selectedTemplate.content);
+      this.subjectControl.setValue(this.selectedTemplate.subject);
+      this.contentControl.setValue(this.selectedTemplate.content);
     }
   }
 
   resetTemplateFields(): void {
-    this.form.get('subject').setValue('');
-    this.form.get('content').setValue('');
+    this.subjectControl.setValue('');
+    this.contentControl.setValue('');
     this.selectedTemplate = undefined;
     this.disableTemplateFields(true);
   }
 
   disableTemplateFields(disable: boolean) {
     if (disable) {
-      this.form.get('subject').disable();
-      this.form.get('content').disable();
+      this.subjectControl.disable();
+      this.contentControl.disable();
     } else {
-      this.form.get('subject').enable();
-      this.form.get('content').enable();
+      this.subjectControl.enable();
+      this.contentControl.enable();
     }
   }
 
   send() {
-    this.toastr.success('Mensaje enviado!');
+    const message: Message = {};
+    const value = this.form.value;
+    // Set Message Value
+    message.subject = this.subjectControl.value;
+    message.content = this.contentControl.value;
+    message.sender = value.sender;
+    message.receivers = value.receivers;
   }
 }

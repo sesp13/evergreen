@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 // Intefaces
-import { MessageTemplate } from '../interfaces/message.interface';
+import { MessageTemplate } from '../interfaces/messageTemplate.interface';
 
 @Injectable({
   providedIn: 'root',

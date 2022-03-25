@@ -43,74 +43,28 @@
   ],
   "messages": [
     {
-      "content": "Mi segundo mensaje chavales!",
-      "subject": "Trying to send my second message",
-      "from": [
-        {
-          "name": "User 1",
-          "cc": "123",
-          "email": "test@email.com"
-        }
-      ],
-      "to": [
-        {
-          "name": "User 2",
-          "cc": "1234",
-          "email": "test1@email.com"
-        }
-      ],
-      "id": "2"
-    },
-    {
-      "content": "Mensaje editado",
-      "subject": "Asunto de un mensaje editado",
-      "from": [
-        {
-          "name": "User 1",
-          "cc": "123",
-          "email": "test@email.com"
-        }
-      ],
-      "to": [
-        {
-          "name": "User 2",
-          "cc": "1234",
-          "email": "test1@email.com"
-        }
-      ],
-      "id": "3"
-    },
-    {
-      "id": "4",
-      "content": "Message 4",
-      "subject": "Trying to send my third message",
-      "from": [
-        {
-          "name": "User 1",
-          "cc": "123",
-          "email": "test@email.com"
-        }
-      ],
-      "to": [
-        {
-          "name": "User 2",
-          "cc": "1234",
-          "email": "test1@email.com"
-        }
-      ]
-    },
-    {
-      "content": "sss",
-      "subject": "Mensaje editado",
-      "from": null,
-      "to": null,
-      "id": "BTo41RC"
-    },
-    {
       "content": "Mundo",
       "subject": "Hola",
       "name": "Nueva plantilla",
       "id": "dLbSVsc"
+    },
+    {
+      "content": "Hola amigos quiero hacer cosas interesantes con este curso",
+      "subject": "Este es un mensaje de la plantilla",
+      "name": "Plantilla de prueba editada",
+      "id": "_Us9YxN"
+    },
+    {
+      "content": "Mi segundo mensaje chavales!",
+      "subject": "Trying to send my second message",
+      "name": "Hola",
+      "id": "sLnkKbz"
+    },
+    {
+      "content": "Mi segundo mensaje chavales!",
+      "subject": "Trying to send my second message",
+      "name": "eee",
+      "id": "FdY98k1"
     }
   ]
 }

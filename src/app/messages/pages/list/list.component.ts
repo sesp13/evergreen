@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ConfirmationModalComponent } from 'src/app/shared/components/confirmation-modal/confirmation-modal.component';
-import { MessageTemplate } from '../../../global/interfaces/message.interface';
+import { MessageTemplate } from '../../../global/interfaces/messageTemplate.interface';
 import { User } from 'src/app/global/interfaces/user.interface';
 
 import { MessageService } from '../../../global/services/message.service';

@@ -1,6 +1,6 @@
-export interface MessageTemplate {
-  name?: string;
+export interface Message {
   subject?: string;
   content?: string;
-  id?: string;
+  sender?: string;
+  receivers?: string[];
 }
