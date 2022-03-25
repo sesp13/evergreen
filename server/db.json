@@ -75,32 +75,20 @@
     {
       "content": "Mundo",
       "subject": "Hola",
-      "name": "Nueva plantilla Editada",
-      "id": "D9G9XN6"
-    },
-    {
-      "content": "Mundo",
-      "subject": "Hola",
-      "name": "Nueva plantilla",
-      "id": "qA-sY2x"
-    },
-    {
-      "content": "Mundo",
-      "subject": "Hola",
-      "name": "Nueva plantilla Editada",
-      "id": "dN3kxiG"
-    },
-    {
-      "content": "Mundo",
-      "subject": "Hola",
       "name": "Nueva plantilla",
       "id": "3bkV7gY"
     },
     {
-      "content": "Mi segundo mensaje chavales!",
-      "subject": "Trying to send my second message",
-      "name": "eee",
+      "content": "Hello world",
+      "subject": "Nuevo mensaje",
+      "name": "Otra plantilla de mensaje",
       "id": "eQkHsbt"
+    },
+    {
+      "content": "Viva wordpress",
+      "subject": "Esta es una plantilla",
+      "name": "Plantilla nueva sin pendejiar",
+      "id": "G0ueZuv"
     }
   ]
 }

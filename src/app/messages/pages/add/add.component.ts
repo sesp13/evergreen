@@ -20,6 +20,7 @@ export class AddComponent implements OnInit {
     content: ['', [Validators.required]],
     subject: ['', [Validators.required]],
     name: ['', [Validators.required]],
+    id: [undefined],
   });
 
   constructor(
@@ -42,6 +43,7 @@ export class AddComponent implements OnInit {
             subject: message?.subject ?? '',
             content: message?.content ?? '',
             name: message?.name ?? '',
+            id: message?.id
           });
         });
     } else {
