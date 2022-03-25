@@ -9,32 +9,32 @@ import { MessageTemplate } from '../interfaces/messageTemplate.interface';
 @Injectable({
   providedIn: 'root',
 })
-export class MessageService {
+export class TemplateService {
   private baseUrl: string = environment.baseUrl;
-  private messagesUrl = `${this.baseUrl}/messages`;
+  private messagesUrl = `${this.baseUrl}/templates`;
 
   constructor(private http: HttpClient) {}
 
-  getMessages(): Observable<MessageTemplate[]> {
+  getTemplates(): Observable<MessageTemplate[]> {
     return this.http.get<MessageTemplate[]>(`${this.messagesUrl}`);
   }
 
-  getMessageById(id: string) {
+  getTemplateById(id: string) {
     return this.http.get(`${this.messagesUrl}/${id}`);
   }
 
-  saveMessage(message: MessageTemplate): Observable<MessageTemplate> {
+  saveTemplate(message: MessageTemplate): Observable<MessageTemplate> {
     return this.http.post<MessageTemplate>(`${this.messagesUrl}`, message);
   }
 
-  updateMessage(message: MessageTemplate): Observable<MessageTemplate> {
+  updateTemplate(message: MessageTemplate): Observable<MessageTemplate> {
     return this.http.put<MessageTemplate>(
       `${this.messagesUrl}/${message?.id}`,
       message
     );
   }
 
-  deleteMessage(id: string): Observable<any> {
+  deleteTemplate(id: string): Observable<any> {
     return this.http.delete(`${this.messagesUrl}/${id}`);
   }
 }

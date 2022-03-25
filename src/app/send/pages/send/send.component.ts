@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Message } from 'src/app/global/interfaces/message.interface';
 import { MessageTemplate } from 'src/app/global/interfaces/messageTemplate.interface';
 import { User } from 'src/app/global/interfaces/user.interface';
-import { MessageService } from 'src/app/global/services/message.service';
+import { TemplateService } from 'src/app/global/services/template.service';
 import { SendService } from 'src/app/global/services/send.service';
 import { UserService } from 'src/app/global/services/user.service';
 
@@ -36,7 +36,7 @@ export class SendComponent implements OnInit {
 
   constructor(
     private sendService: SendService,
-    private messagesService: MessageService,
+    private templateService: TemplateService,
     private usersService: UserService,
     private toastr: ToastrService,
     private fb: FormBuilder
@@ -49,8 +49,8 @@ export class SendComponent implements OnInit {
   }
 
   getTemplates(): void {
-    this.messagesService
-      .getMessages()
+    this.templateService
+      .getTemplates()
       .subscribe((messages: MessageTemplate[]) => {
         this.templateLst = messages;
       });

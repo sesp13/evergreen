@@ -41,7 +41,7 @@
       "id": "4"
     }
   ],
-  "messages": [
+  "templates": [
     {
       "content": "Mundo",
       "subject": "Hola",
@@ -65,6 +65,42 @@
       "subject": "Trying to send my second message",
       "name": "eee",
       "id": "FdY98k1"
+    },
+    {
+      "content": "Como están compañeros",
+      "subject": "Hola Desde evergreen",
+      "name": "Nueva plantilla",
+      "id": "aFz6wsS"
+    },
+    {
+      "content": "Mundo",
+      "subject": "Hola",
+      "name": "Nueva plantilla Editada",
+      "id": "D9G9XN6"
+    },
+    {
+      "content": "Mundo",
+      "subject": "Hola",
+      "name": "Nueva plantilla",
+      "id": "qA-sY2x"
+    },
+    {
+      "content": "Mundo",
+      "subject": "Hola",
+      "name": "Nueva plantilla Editada",
+      "id": "dN3kxiG"
+    },
+    {
+      "content": "Mundo",
+      "subject": "Hola",
+      "name": "Nueva plantilla",
+      "id": "3bkV7gY"
+    },
+    {
+      "content": "Mi segundo mensaje chavales!",
+      "subject": "Trying to send my second message",
+      "name": "eee",
+      "id": "eQkHsbt"
     }
   ]
 }

@@ -4,7 +4,7 @@ import { ConfirmationModalComponent } from 'src/app/shared/components/confirmati
 import { MessageTemplate } from '../../../global/interfaces/messageTemplate.interface';
 import { User } from 'src/app/global/interfaces/user.interface';
 
-import { MessageService } from '../../../global/services/message.service';
+import { TemplateService } from '../../../global/services/template.service';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -16,7 +16,7 @@ export class ListComponent implements OnInit {
   deleteId?: string;
 
   constructor(
-    private messageService: MessageService,
+    private templateService: TemplateService,
     private toastr: ToastrService
   ) {}
 
@@ -25,7 +25,7 @@ export class ListComponent implements OnInit {
   }
 
   getMessages(): void {
-    this.messageService.getMessages().subscribe((lst: MessageTemplate[]) => {
+    this.templateService.getTemplates().subscribe((lst: MessageTemplate[]) => {
       this.messagesLst = lst;
     });
   }
@@ -36,7 +36,7 @@ export class ListComponent implements OnInit {
   }
 
   deleteMessage(): void {
-    this.messageService.deleteMessage(this.deleteId).subscribe((result) => {
+    this.templateService.deleteTemplate(this.deleteId).subscribe((result) => {
       this.toastr.success('Plantilla eliminada correctamente');
       this.getMessages();
     });

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageTemplate } from '../../../global/interfaces/messageTemplate.interface';
-import { MessageService } from '../../../global/services/message.service';
+import { TemplateService } from '../../../global/services/template.service';
 import { switchMap } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
@@ -23,7 +23,7 @@ export class AddComponent implements OnInit {
   });
 
   constructor(
-    private messageService: MessageService,
+    private templateService: TemplateService,
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
@@ -35,7 +35,7 @@ export class AddComponent implements OnInit {
       this.setUpLabels(true);
       this.route.params
         .pipe(
-          switchMap(({ id }) => this.messageService.getMessageById(id ?? ''))
+          switchMap(({ id }) => this.templateService.getTemplateById(id ?? ''))
         )
         .subscribe((message: MessageTemplate) => {
           this.form.setValue({
@@ -64,15 +64,15 @@ export class AddComponent implements OnInit {
   send() {
     if (this.form.get('id')?.value) {
       // Edit
-      this.messageService
-        .updateMessage(this.form.value as MessageTemplate)
+      this.templateService
+        .updateTemplate(this.form.value as MessageTemplate)
         .subscribe((result: MessageTemplate) => {
           this.toastr.success(this.successMessage);
         });
     } else {
       // Save
-      this.messageService
-        .saveMessage(this.form.value as MessageTemplate)
+      this.templateService
+        .saveTemplate(this.form.value as MessageTemplate)
         .subscribe((result: MessageTemplate) => {
           this.toastr.success(this.successMessage);
           this.router.navigate(['/messages/edit', result?.id]);
