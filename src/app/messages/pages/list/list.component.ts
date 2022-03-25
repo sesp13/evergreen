@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ConfirmationModalComponent } from 'src/app/shared/components/confirmation-modal/confirmation-modal.component';
-import { Message } from '../../../interfaces/message.interface';
-import { User } from 'src/app/interfaces/user.interface';
+import { Message } from '../../../global/interfaces/message.interface';
+import { User } from 'src/app/global/interfaces/user.interface';
 
-import { MessageService } from '../../services/message.service';
+import { MessageService } from '../../../global/services/message.service';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',

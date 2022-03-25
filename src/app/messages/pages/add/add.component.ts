@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Message } from '../../../interfaces/message.interface';
-import { MessageService } from '../../services/message.service';
+import { Message } from '../../../global/interfaces/message.interface';
+import { MessageService } from '../../../global/services/message.service';
 import { switchMap } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
