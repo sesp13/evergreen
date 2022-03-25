@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SendRoutingModule } from './send-routing.module';
 import { SendComponent } from './pages/send/send.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { SendComponent } from './pages/send/send.component';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     SendRoutingModule
   ]
 })

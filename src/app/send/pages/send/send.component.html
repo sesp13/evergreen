@@ -1,1 +1,16 @@
-<p>send works!</p>
+<h1>Enviar mensaje</h1>
+<hr>
+<form [formGroup]="form">
+  <div class="row">
+    <!-- <div class="form-group col">
+      <label class="form-label">Selección de plantilla</label>
+      <select class="form-control" (change)="setTemplate()" formControlName="template">
+        <option value="">-- Seleccionar plantilla ---</option>
+        <option *ngFor="let message of templateLst" [value]="message.id">{{ message.id }}</option>
+        <option value="custom">Personalizada</option>
+      </select>
+    </div> -->
+  </div>
+</form>
+
+<pre>{{ selectedTemplate | json }}</pre>

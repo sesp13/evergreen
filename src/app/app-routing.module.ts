@@ -23,6 +23,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'send',
+    loadChildren: () =>
+      import('./send/send.module').then(
+        (module) => module.SendModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'home',
   },
