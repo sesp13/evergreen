@@ -58,8 +58,8 @@
       <label class="form-label">Emisor</label>
       <select class="form-control" formControlName="sender">
         <option value="">-- Escoge un emisor ---</option>
-        <option *ngFor="let user of sendersLst" [value]="user.id">
-          {{ user?.id }} - {{ user?.name }}
+        <option *ngFor="let user of sendersLst" [value]="user?._id">
+          {{ user?.name }}
         </option>
       </select>
     </div>
@@ -71,7 +71,7 @@
       <ng-select
         [items]="receiversLst"
         bindLabel="name"
-        bindValue="id"
+        bindValue="_id"
         [multiple]="true"
         formControlName="receivers"
       ></ng-select>

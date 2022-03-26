@@ -120,10 +120,21 @@ export class SendComponent implements OnInit {
     message.sender = value.sender;
     message.receivers = value.receivers;
     message.status = value.status;
+
+    // Set request type
+    const type =
+      message.status == 'sent'
+        ? 'send'
+        : message.status == 'draft'
+        ? 'draft'
+        : '';
+
     // Create message
-    this.sendService.createMessage(message).subscribe((result: Message) => {
-      this.toastr.success('Mensaje creado correctamente');
-      this.router.navigate(['/send/list']);
-    });
+    this.sendService
+      .createMessage(message, type)
+      .subscribe((result: Message) => {
+        this.toastr.success('Mensaje creado correctamente');
+        this.router.navigate(['/send/list']);
+      });
   }
 }

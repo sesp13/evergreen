@@ -6,5 +6,5 @@ export interface User {
   birthDate: Date;
   sender: boolean;
   receiver: boolean;
-  id: string;
+  _id: string;
 }

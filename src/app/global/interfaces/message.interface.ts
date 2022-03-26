@@ -8,5 +8,5 @@ export interface Message {
   receivers?: string[];
   receiversObjects?: User[];
   status?: string;
-  id?: string;
+  _id?: string;
 }
