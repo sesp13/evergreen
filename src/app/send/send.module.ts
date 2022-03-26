@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgSelectModule } from '@ng-select/ng-select'
-
-import { SendRoutingModule } from './send-routing.module';
-import { SendComponent } from './pages/send/send.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { SendRoutingModule } from './send-routing.module';
+import { SharedModule } from '../shared/shared.module';
+
+import { StatePipe } from './pipes/state.pipe';
+
+import { SendComponent } from './pages/send/send.component';
+import { ListComponent } from './pages/list/list.component';
 
 @NgModule({
-  declarations: [
-    SendComponent
-  ],
+  declarations: [SendComponent, ListComponent, StatePipe],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     NgSelectModule,
-    SendRoutingModule
-  ]
+    SendRoutingModule,
+    SharedModule,
+  ],
 })
-export class SendModule { }
+export class SendModule {}

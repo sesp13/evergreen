@@ -12,6 +12,7 @@ import { User } from 'src/app/global/interfaces/user.interface';
 import { TemplateService } from 'src/app/global/services/template.service';
 import { SendService } from 'src/app/global/services/send.service';
 import { UserService } from 'src/app/global/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-send',
@@ -22,24 +23,37 @@ export class SendComponent implements OnInit {
   templateLst: MessageTemplate[] = [];
   sendersLst: User[] = [];
   receiversLst: User[] = [];
-  selectedTemplate?: MessageTemplate;
 
   form: FormGroup = this.fb.group({
-    template: ['', [Validators.required]],
+    template: [''],
     subject: [{ value: '', disabled: true }, [Validators.required]],
     content: [{ value: '', disabled: true }, [Validators.required]],
+    customize: [false],
     sender: ['', [Validators.required]],
     receivers: ['', [Validators.required]],
+    status: ['', [Validators.required]],
   });
+
   subjectControl?: AbstractControl = this.form.get('subject');
   contentControl?: AbstractControl = this.form.get('content');
+  templateField?: AbstractControl = this.form.get('template');
+  customizeControl?: AbstractControl = this.form.get('customize');
+
+  get formValid(): boolean {
+    return (
+      this.form.valid &&
+      this.subjectControl.value != '' &&
+      this.contentControl.value != ''
+    );
+  }
 
   constructor(
     private sendService: SendService,
     private templateService: TemplateService,
     private usersService: UserService,
     private toastr: ToastrService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -69,25 +83,22 @@ export class SendComponent implements OnInit {
   }
 
   setTemplate(): void {
-    const value: string | number = this.form.get('template')?.value;
+    const value: string | number = this.templateField.value;
     this.resetTemplateFields();
     if (value == '') {
       return;
-    } else if (value == 'custom') {
-      this.disableTemplateFields(false);
     } else {
       // Set content
-      this.selectedTemplate = this.templateLst[value];
-      this.subjectControl.setValue(this.selectedTemplate.subject);
-      this.contentControl.setValue(this.selectedTemplate.content);
+      const selectedTemplate = this.templateLst[value];
+      this.subjectControl.setValue(selectedTemplate.subject);
+      this.contentControl.setValue(selectedTemplate.content);
     }
   }
 
   resetTemplateFields(): void {
     this.subjectControl.setValue('');
     this.contentControl.setValue('');
-    this.selectedTemplate = undefined;
-    this.disableTemplateFields(true);
+    if (!this.customizeControl.value) this.disableTemplateFields(true);
   }
 
   disableTemplateFields(disable: boolean) {
@@ -108,5 +119,11 @@ export class SendComponent implements OnInit {
     message.content = this.contentControl.value;
     message.sender = value.sender;
     message.receivers = value.receivers;
+    message.status = value.status;
+    // Create message
+    this.sendService.createMessage(message).subscribe((result: Message) => {
+      this.toastr.success('Mensaje creado correctamente');
+      this.router.navigate(['/send/list']);
+    });
   }
 }

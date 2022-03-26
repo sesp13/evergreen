@@ -1,0 +1,63 @@
+<h1>Listado de mensajes</h1>
+<hr />
+<div class="row mt-3">
+  <div class="col">
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-success float-end" [routerLink]="['/send/add']">
+        Crear Mensaje
+      </button>
+    </div>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Asunto</th>
+          <th scope="col">Contenido</th>
+          <th scope="col">Emisor</th>
+          <th scope="col">Receptores</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let message of messagesLst">
+          <th scope="row">{{ message?.subject }}</th>
+          <th>{{ message?.content }}</th>
+          <td>{{ message?.senderObject?.name }}</td>
+          <td>
+            <p *ngFor="let user of message?.receiversObjects">
+              {{ user.name }}
+            </p>
+          </td>
+          <td>{{ message?.status | state }}</td>
+          <td>
+            <div class="d-flex">
+              <button
+                class="btn btn-primary mr-2"
+                *ngIf="message.status == 'draft'"
+                (click)="sendMessage(message.id)"
+              >
+                Enviar
+              </button>
+              <button
+                class="btn btn-danger"
+                (click)="confirmDeletion(message.id)"
+              >
+                Eliminar
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- deletion modal -->
+<app-confirmation-modal
+  #deletionModal
+  (onConfirmation)="deleteMessage()"
+></app-confirmation-modal>

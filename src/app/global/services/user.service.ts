@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../interfaces/user.interface';
 
@@ -19,5 +19,17 @@ export class UserService {
 
   getReceiverUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.usersUrl}`);
+  }
+
+  getUserById(id: string): Observable<User> {
+    return this.http.get<User>(`${this.usersUrl}/${id}`);
+  }
+
+  getUsersByIds(ids: string[]): Observable<User[]> {
+    const requests: Observable<User>[] = [];
+    ids.forEach((id: string) => {
+      requests.push(this.getUserById(id));
+    });
+    return combineLatest(requests);
   }
 }
