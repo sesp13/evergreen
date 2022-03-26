@@ -59,4 +59,8 @@ export class ListComponent implements OnInit {
       this.getMessages();
     });
   }
+
+  sendMessage(id: string) {
+    this.toastr.success('Message sent');
+  }
 }

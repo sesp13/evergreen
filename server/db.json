@@ -61,40 +61,10 @@
       "id": "sLnkKbz"
     },
     {
-      "content": "Mi segundo mensaje chavales!",
-      "subject": "Trying to send my second message",
-      "name": "eee",
-      "id": "FdY98k1"
-    },
-    {
-      "content": "Como están compañeros",
-      "subject": "Hola Desde evergreen",
-      "name": "Nueva plantilla",
-      "id": "aFz6wsS"
-    },
-    {
-      "content": "Mundo",
-      "subject": "Hola",
-      "name": "Nueva plantilla",
-      "id": "3bkV7gY"
-    },
-    {
       "content": "Hello world",
       "subject": "Nuevo mensaje",
       "name": "Otra plantilla de mensaje",
       "id": "eQkHsbt"
-    },
-    {
-      "content": "Viva wordpress",
-      "subject": "Esta es una plantilla",
-      "name": "Plantilla nueva sin pendejiar",
-      "id": "G0ueZuv"
-    },
-    {
-      "content": "ssss",
-      "subject": "sss",
-      "name": "hello",
-      "id": "A6ffQnC"
     }
   ],
   "messages": [
@@ -109,6 +79,16 @@
       "id": 1
     },
     {
+      "subject": "Buenos días",
+      "content": "Dormilon, quiere una tasa de te",
+      "sender": "1",
+      "receivers": [
+        "2"
+      ],
+      "status": "draft",
+      "id": 3
+    },
+    {
       "subject": "Hola",
       "content": "Mundo",
       "sender": "1",
@@ -120,6 +100,17 @@
       ],
       "status": "sent",
       "id": 4
+    },
+    {
+      "subject": "Trying to send my second message",
+      "content": "Mi segundo mensaje chavales!",
+      "sender": "1",
+      "receivers": [
+        "1",
+        "4"
+      ],
+      "status": "draft",
+      "id": 5
     }
   ]
 }
