@@ -61,6 +61,9 @@ export class ListComponent implements OnInit {
   }
 
   sendMessage(id: string) {
-    this.toastr.success('Message sent');
+    this.sendService.sendMessage(id).subscribe((result) => {
+      this.toastr.success('El mensaje fue enviado correctamente');
+      this.getMessages();
+    });
   }
 }

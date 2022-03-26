@@ -19,13 +19,14 @@ export class SendService {
   }
 
   createMessage(newMsg: Message, type: string): Observable<Message> {
-    return this.http.post<Message>(
-      `${this.messagesUrl}/${type}`,
-      newMsg
-    );
+    return this.http.post<Message>(`${this.messagesUrl}/${type}`, newMsg);
   }
 
   deleteMessage(id: string): Observable<any> {
     return this.http.delete(`${this.messagesUrl}/${id}`);
+  }
+
+  sendMessage(id: string): Observable<Message> {
+    return this.http.put<Message>(`${this.messagesUrl}/${id}`, {});
   }
 }
