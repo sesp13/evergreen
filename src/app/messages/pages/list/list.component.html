@@ -31,13 +31,13 @@
             <div class="d-flex">
               <button
                 class="btn btn-primary mr-2"
-                [routerLink]="['/messages/edit', message?.id]"
+                [routerLink]="['/messages/edit', message?._id]"
               >
                 Editar
               </button>
               <button
                 class="btn btn-danger"
-                (click)="confirmDeletion(message?.id)"
+                (click)="confirmDeletion(message?._id)"
               >
                 Eliminar
               </button>

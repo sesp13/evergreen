@@ -20,7 +20,7 @@ export class AddComponent implements OnInit {
     content: ['', [Validators.required]],
     subject: ['', [Validators.required]],
     name: ['', [Validators.required]],
-    id: [undefined],
+    _id: [undefined],
   });
 
   constructor(
@@ -43,7 +43,7 @@ export class AddComponent implements OnInit {
             subject: message?.subject ?? '',
             content: message?.content ?? '',
             name: message?.name ?? '',
-            id: message?.id
+            _id: message?._id
           });
         });
     } else {
@@ -64,7 +64,7 @@ export class AddComponent implements OnInit {
   }
 
   send() {
-    if (this.form.get('id')?.value) {
+    if (this.form.get('_id')?.value) {
       // Edit
       this.templateService
         .updateTemplate(this.form.value as MessageTemplate)
@@ -77,7 +77,7 @@ export class AddComponent implements OnInit {
         .saveTemplate(this.form.value as MessageTemplate)
         .subscribe((result: MessageTemplate) => {
           this.toastr.success(this.successMessage);
-          this.router.navigate(['/messages/edit', result?.id]);
+          this.router.navigate(['/messages/edit', result?._id]);
         });
     }
   }

@@ -29,7 +29,7 @@ export class TemplateService {
 
   updateTemplate(message: MessageTemplate): Observable<MessageTemplate> {
     return this.http.put<MessageTemplate>(
-      `${this.messagesUrl}/${message?.id}`,
+      `${this.messagesUrl}/${message?._id}`,
       message
     );
   }
