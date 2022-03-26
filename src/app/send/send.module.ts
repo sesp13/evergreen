@@ -6,11 +6,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SendRoutingModule } from './send-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
+import { StatePipe } from './pipes/state.pipe';
+
 import { SendComponent } from './pages/send/send.component';
 import { ListComponent } from './pages/list/list.component';
 
 @NgModule({
-  declarations: [SendComponent, ListComponent],
+  declarations: [SendComponent, ListComponent, StatePipe],
   imports: [
     CommonModule,
     ReactiveFormsModule,

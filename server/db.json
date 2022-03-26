@@ -65,6 +65,12 @@
       "subject": "Nuevo mensaje",
       "name": "Otra plantilla de mensaje",
       "id": "eQkHsbt"
+    },
+    {
+      "content": "Va pal cuartico pequeño a esperar",
+      "subject": "Blockchain para viajes",
+      "name": "Nueva plantilla",
+      "id": "8VYr3kL"
     }
   ],
   "messages": [
@@ -87,19 +93,6 @@
       ],
       "status": "draft",
       "id": 3
-    },
-    {
-      "subject": "Hola",
-      "content": "Mundo",
-      "sender": "1",
-      "receivers": [
-        "1",
-        "3",
-        "2",
-        "4"
-      ],
-      "status": "sent",
-      "id": 4
     },
     {
       "subject": "Trying to send my second message",
