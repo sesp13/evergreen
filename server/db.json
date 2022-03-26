@@ -109,26 +109,6 @@
       "id": 1
     },
     {
-      "subject": "Que pasa bros",
-      "content": "hOLA",
-      "sender": "1",
-      "receivers": [
-        "2"
-      ],
-      "status": "sent",
-      "id": 2
-    },
-    {
-      "subject": "Buenos días",
-      "content": "Dormilon, quiere una tasa de te",
-      "sender": "1",
-      "receivers": [
-        "2"
-      ],
-      "status": "draft",
-      "id": 3
-    },
-    {
       "subject": "Hola",
       "content": "Mundo",
       "sender": "1",

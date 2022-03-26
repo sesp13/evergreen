@@ -21,4 +21,8 @@ export class SendService {
   createMessage(newMsg: Message): Observable<Message> {
     return this.http.post<Message>(this.messagesUrl, newMsg);
   }
+
+  deleteMessage(id: string): Observable<any> {
+    return this.http.delete(`${this.messagesUrl}/${id}`);
+  }
 }
