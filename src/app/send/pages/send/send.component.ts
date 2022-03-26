@@ -33,8 +33,11 @@ export class SendComponent implements OnInit {
     receivers: ['', [Validators.required]],
     status: ['', [Validators.required]],
   });
+
   subjectControl?: AbstractControl = this.form.get('subject');
   contentControl?: AbstractControl = this.form.get('content');
+  templateField?: AbstractControl = this.form.get('template');
+  customizeControl?: AbstractControl = this.form.get('customize');
 
   get formValid(): boolean {
     return (
@@ -80,7 +83,7 @@ export class SendComponent implements OnInit {
   }
 
   setTemplate(): void {
-    const value: string | number = this.form.get('template')?.value;
+    const value: string | number = this.templateField.value;
     this.resetTemplateFields();
     if (value == '') {
       return;
@@ -92,20 +95,10 @@ export class SendComponent implements OnInit {
     }
   }
 
-  customizeTemplateFields(): void {
-    const custom: boolean = this.form.get('customize')?.value;
-    if (custom) {
-      this.disableTemplateFields(false);
-    } else {
-      this.form.get('template').setValue('');
-      this.resetTemplateFields();
-    }
-  }
-
   resetTemplateFields(): void {
     this.subjectControl.setValue('');
     this.contentControl.setValue('');
-    this.disableTemplateFields(true);
+    if (!this.customizeControl.value) this.disableTemplateFields(true);
   }
 
   disableTemplateFields(disable: boolean) {

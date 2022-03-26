@@ -44,7 +44,7 @@
           type="checkbox"
           id="flexCheckChecked"
           formControlName="customize"
-          (change)="customizeTemplateFields()"
+          (change)="disableTemplateFields(!form.controls.customize.value)"
         />
         <label class="form-check-label" for="flexCheckChecked">
           Personalizar plantilla

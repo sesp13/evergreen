@@ -104,6 +104,16 @@
       ],
       "status": "draft",
       "id": 5
+    },
+    {
+      "subject": "Este es un mensaje de la plantilla",
+      "content": "Hola amigos quiero hacer cosas interesantes con este curso",
+      "sender": "1",
+      "receivers": [
+        "1"
+      ],
+      "status": "sent",
+      "id": 6
     }
   ]
 }
