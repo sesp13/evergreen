@@ -12,6 +12,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   goHome(): void {
-    this.router.navigate(['/home']);
+    window.location.href = 'http://ec2-3-85-128-140.compute-1.amazonaws.com/home'
   }
 }
