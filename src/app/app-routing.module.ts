@@ -9,20 +9,6 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'messages',
-    loadChildren: () =>
-      import('./messages/messages.module').then(
-        (module) => module.MessagesModule
-      ),
-  },
-  {
-    path: 'users',
-    loadChildren: () =>
-      import('./users/users.module').then(
-        (module) => module.UsersModule
-      ),
-  },
-  {
     path: 'send',
     loadChildren: () =>
       import('./send/send.module').then(
